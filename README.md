@@ -12,6 +12,13 @@ Docker or Podman (aliased as docker) must be installed.
 docker build -t snowpark-notebook:latest .
 ```
 
+If using Podman to build the container use the following commands:
+
+```shell
+export BUILDAH_FORMAT=docker
+podman build -t snowpark-notebook:latest .
+```
+
 ## Run the container
 
 Use one of the commands, depending upon the environment, to launch the container. Your current directory is where the container will store any files you create in the container.
