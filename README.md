@@ -4,7 +4,11 @@ This repository allows you to create a Python 3.8 Snowflake Snowpark containeriz
 
 ## Prerequisites
 
-Docker or Podman (aliased as docker) must be installed.
+Docker or Podman must be installed.
+
+## Warning
+
+This container will not build using the Apple silicon platform due to issues with the underlying software.
 
 ## Build the container
 
@@ -29,16 +33,34 @@ Use one of the commands, depending upon the environment, to launch the container
 docker run -it -p 8888:8888 -v "${PWD}":/home/jovyan/work snowpark-notebook:latest
 ```
 
+If using Podman
+
+```sh
+podman run -it -p 8888:8888 -v "${PWD}":/home/jovyan/work snowpark-notebook:latest
+```
+
 ### Windows Command Line (CLI)
 
 ```shell
 docker run -it -p 8888:8888 -v %cd%:/home/jovyan/work snowpark-notebook:latest
 ```
 
+If using Podman
+
+```sh
+podman run -it -p 8888:8888 -v %cd%:/home/jovyan/work snowpark-notebook:latest
+```
+
 ### Powershell
 
 ```powershell
 docker run -it -p 8888:8888 -v ${PWD}:/home/jovyan/work snowpark-notebook:latest
+```
+
+If using Podman
+
+```powershell
+podman run -it -p 8888:8888 -v ${PWD}:/home/jovyan/work snowpark-notebook:latest
 ```
 
 ## Connect to the container
